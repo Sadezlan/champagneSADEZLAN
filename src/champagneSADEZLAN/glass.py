@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from math import pi
 from typing import Optional
 from scipy.integrate import quad
-from radius_fun import r as f
+from .radius_fun import f
 
 @dataclass
 class GlassProfile:
