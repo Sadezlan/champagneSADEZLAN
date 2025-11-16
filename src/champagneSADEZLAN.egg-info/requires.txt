@@ -1,0 +1,11 @@
+numpy
+pandas
+scipy
+
+[dev]
+pytest
+ruff
+mypy
+sphinx
+mkdocs
+mkdocstrings[python]
