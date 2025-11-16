@@ -12,6 +12,12 @@ def load_raw_weather(path: Path = RAW_WEATHER_PATH) -> dict:
     """Load the nested JSON with weather data."""
     with path.open("r", encoding="utf-8") as f:
         return json.load(f)
+    
+def unwrap(value):
+    """If value is a list like [x], return x. Otherwise return value."""
+    if isinstance(value, list) and len(value) == 1:
+        return value[0]
+    return value
 
 # Function to extract relevant fields into a flat table
 def extract_weather_table(raw: dict) -> pd.DataFrame:
@@ -22,9 +28,9 @@ def extract_weather_table(raw: dict) -> pd.DataFrame:
         rows.append(
             {
                 "city": city_name,
-                "temperature": main.get("temp"),
-                "humidity": main.get("humidity"),
-                "pressure": main.get("pressure"),
+                "temperature": unwrap(main.get("temp")),
+                "humidity": unwrap(main.get("humidity")),
+                "pressure": unwrap(main.get("pressure")),
             }
         )
     return pd.DataFrame(rows)
