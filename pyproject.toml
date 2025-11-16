@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "champagneSADEZLAN"
+version = "0.1.0"
+description = "Simulation of champagne consumption for a weather-dependent event."
+authors = [
+  { name = "Axel Lo SChiavo", email = "axel.loschiavo@unil.ch" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy",
+  "pandas",
+  "scipy",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff", "mypy", "sphinx", "mkdocs", "mkdocstrings[python]"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
