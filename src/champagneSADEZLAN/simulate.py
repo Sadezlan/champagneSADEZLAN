@@ -15,7 +15,7 @@ def _sample_fill_height(glass: GlassProfile, rng: np.random.Generator) -> float:
     a is fixed at glass.x2; b ~ N(14, 0.25) with constraint b > a and b <= x4.
     """
     a = glass.x2
-    sd = sqrt(0.25)  # standard deviation = 0.5
+    sd = 0.5  # standard deviation = 0.5
 
     while True:
         b = rng.normal(loc=14.0, scale=sd)
