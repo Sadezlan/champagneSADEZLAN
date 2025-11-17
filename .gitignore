@@ -1,4 +1,4 @@
-# __pycache__/
-#*.pyc
+src/champagneSADEZLAN/__pycache__/
+*.pyc
 
-*.egg-info/
+src/champagneSADEZLAN.egg-info/
