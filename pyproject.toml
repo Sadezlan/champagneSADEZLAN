@@ -15,6 +15,10 @@ dependencies = [
   "numpy",
   "pandas",
   "scipy",
+  "matplotlib",
+  "math",
+  "typing_extensions",
+  "dataclass"
 ]
 
 [project.optional-dependencies]
