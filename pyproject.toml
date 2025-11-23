@@ -15,10 +15,7 @@ dependencies = [
   "numpy",
   "pandas",
   "scipy",
-  "matplotlib",
-  "math",
-  "typing_extensions",
-  "dataclass"
+  "matplotlib"
 ]
 
 [project.optional-dependencies]
@@ -30,14 +27,8 @@ package-dir = {"" = "src"}
 [tool.setuptools.packages.find]
 where = ["src"]
 
-[tool.publish]
-repository = "https://upload.pypi.org/legacy/"
-
 [project.urls]
 Homepage = "https://github.com/Sadezlan/champagneSADEZLAN"
 
 [tool.distutils.bdist_wheel]
 universal = true
-
-[tool.twine]
-repository = "github"
