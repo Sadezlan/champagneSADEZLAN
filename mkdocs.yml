@@ -3,7 +3,7 @@ theme:
   name: mkdocs
 
 plugins:
-  - mkdocstring:
+  - mkdocstrings:
       handlers:
         python:
           options:
