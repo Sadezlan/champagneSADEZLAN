@@ -24,5 +24,20 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["pytest", "ruff", "mypy", "sphinx", "mkdocs", "mkdocstrings[python]"]
 
+[tool.setuptools]
+package-dir = {"" = "src"}
+
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.publish]
+repository = "https://upload.pypi.org/legacy/"
+
+[project.urls]
+Homepage = "https://github.com/Sadezlan/champagneSADEZLAN"
+
+[tool.distutils.bdist_wheel]
+universal = true
+
+[tool.twine]
+repository = "github"
