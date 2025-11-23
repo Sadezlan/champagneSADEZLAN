@@ -10,14 +10,14 @@ Below is a short description of the main components, in the order they are intro
 
 - **`S(z)`**  
   Easing function  
-  \[
+  $$
   S(z) = 0.5 - 0.5 \cos(\pi z)
-  \]  
+  $$  
   used to obtain smooth transitions in the glass radius.
 
 - **`f(t, x1, x2, x3, x4, r_foot, r_stem, r_bowl, r_rim)`**  
-  Scalar radius profile \( r(t) \) of the glass, defined piecewise along the horizontal axis \( t \).  
-  Returns the radius (in cm) at a single position \( t \), given the breakpoints and section radius.
+  Scalar radius profile $r(t)$ of the glass, defined piecewise along the horizontal axis $t$.  
+  Returns the radius (in cm) at a single position $t$, given the breakpoints and section radius.
 
 - **`f_vec_for_integrate(t_values, ...)`**  
   Vectorized wrapper around `f()` that evaluates the radius for a sequence of `t` values.  
@@ -33,9 +33,9 @@ Below is a short description of the main components, in the order they are intro
   **Main methods:**
   - `radius_cone(t)` → returns the radius at height `t`.
   - `volume_between(a, b)` → computes the volume of champagne between levels `t = a` and `t = b` using the disk method  
-    \[
+    $$
     V = \pi \int_a^b [r(t)]^2 dt
-    \]  
+    $$ 
     Volume is returned in cm³.
 
 ---
@@ -71,9 +71,9 @@ Below is a short description of the main components, in the order they are intro
 
 - **`expected_lambda(city_weather)`**  
   Computes the expected number of guests  
-  \[
+  $$
   \lambda = \exp(0.5 + 0.5T - 3H + 0.001P)
-  \]  
+  $$ 
   where:
   - `T` = temperature (°C),
   - `H` = humidity **in fraction** (converted from %),
@@ -87,8 +87,8 @@ Below is a short description of the main components, in the order they are intro
 
 - **`simulate_party(city_weather, glass, rng=None, bottle_L=0.75)`**  
   Simulates a single party with:
-  - Number of guests \( G \sim \text{Poisson}(\lambda) \), with \( \lambda \) from `expected_lambda()`.
-  - Each guest drinks \( D \sim \text{Poisson}(1.4) \) glasses.
+  - Number of guests $( G \sim \text{Poisson}(\lambda) )$, with $( \lambda )$ from `expected_lambda()`.
+  - Each guest drinks $( D \sim \text{Poisson}(1.4) )$ glasses.
   - Each glass is filled between `a = x2` and `b ~ N(14, 0.25)` (truncated so that `b > a` and `b <= x4`).
   - Volume per glass is computed with `GlassProfile.volume_between(a, b)`.
 
