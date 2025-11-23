@@ -14,7 +14,8 @@ nav:
   - Home: index.md
   - API:
       - Glass : api/glass.md
-      - Radius function: api/radius.md
+      - Radius function: api/radius_fun.md
+      - Process  data: api/processed_data_documentation.md
       - Weather: api/weather.md
       - Expected lambda: api/expected_lambda.md
-      - Simulation: api/simulation.md
+      - Simulation: api/simulate.md
