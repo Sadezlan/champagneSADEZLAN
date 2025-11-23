@@ -2,7 +2,7 @@ site_name: champagneSADEZLAN
 theme:
   name: mkdocs
 
-plugings:
+plugins:
   - mkdocstring:
       handlers:
         python:
