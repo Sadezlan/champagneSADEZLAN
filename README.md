@@ -10,9 +10,9 @@ Below is a short description of the main components, in the order they are intro
 
 - **`S(z)`**  
   Easing function  
-  $$
-  S(z) = 0.5 - 0.5 \cos(\pi z)
-  $$  
+  
+  $S(z) = 0.5 - 0.5 \cos(\pi z)$
+   
   used to obtain smooth transitions in the glass radius.
 
 - **`f(t, x1, x2, x3, x4, r_foot, r_stem, r_bowl, r_rim)`**  
@@ -33,9 +33,9 @@ Below is a short description of the main components, in the order they are intro
   **Main methods:**
   - `radius_cone(t)` → returns the radius at height `t`.
   - `volume_between(a, b)` → computes the volume of champagne between levels `t = a` and `t = b` using the disk method  
-    $$
-    V = \pi \int_a^b [r(t)]^2 dt
-    $$ 
+    
+    $V = \pi \int_a^b [r(t)]^2 dt$
+    
     Volume is returned in cm³.
 
 ---
@@ -71,9 +71,9 @@ Below is a short description of the main components, in the order they are intro
 
 - **`expected_lambda(city_weather)`**  
   Computes the expected number of guests  
-  $$
-  \lambda = \exp(0.5 + 0.5T - 3H + 0.001P)
-  $$ 
+  
+  $\lambda = \exp(0.5 + 0.5T - 3H + 0.001P)$
+   
   where:
   - `T` = temperature (°C),
   - `H` = humidity **in fraction** (converted from %),
